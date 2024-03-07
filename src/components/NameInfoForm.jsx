@@ -1,20 +1,24 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useRef } from "react";
 
-export const FnameContext = createContext(fname);
 
-function NameInfo() {
+function NameInfo({updateFirstName}) {
 const [Fname, setFname] = useState("ads")
+const inputRef = useRef(null);
+
+// const sendName = (e) => {
+//   setFname(e.target.value);
+// }
 
     return  <div>
-        <FnameContext.Provider value={Fname}>
-        <input placeholder={Fname}></input>
-        </FnameContext.Provider>
+        <input placeholder={Fname}  ref={inputRef}></input>
         <br></br>
         <input placeholder="Phone"></input>
         <br></br>
         <input placeholder="Email"></input>
         <br></br>
         <input placeholder="Address"></input>
+        <br></br>
+        <button onClick={() => {updateFirstName(inputRef.current.value)}}>Create</button>
     </div>
 }
 
