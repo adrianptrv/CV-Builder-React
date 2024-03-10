@@ -10,7 +10,7 @@ import './styles/index.css'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
   <br></br>
-  <EducationInfo/>
+ 
   <br></br>
   <CVBuild/>
   </React.StrictMode>,

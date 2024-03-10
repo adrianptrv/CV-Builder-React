@@ -3,19 +3,19 @@ import NameInfo from "./NameInfoForm.jsx";
 import FnameContext from './NameInfoForm.jsx'
 
 
-function CVBuild () {
-    const [cvInfo, setCVinfo] = useState({firstName: "Test", lastName: "Test2", phone: "11111", email: "asd@asd.bg", address:"ul.MOmin"})
+function CVBuild() {
+    const [pagge, setPagge] = useState(1)
 
-    const updateName = (value) => {
-        console.log(value)
-        setCVinfo({...cvInfo, firstName: value})
+
+    const pageChange = () => {
+        setPagge(!pagge)
     }
 
-
     return (
-        <>
-        <NameInfo updateFirstName={updateName} />
-        <h1>{cvInfo.firstName}</h1>
+        <> {pagge ? <div style={{backgroundColor:"yellow", width:"1200px", height:"800px"}}> <NameInfo pageNum={pagge}/> </div> :
+         <div style={{backgroundColor:"blue", width:"800px", height:"800px"}}> <NameInfo pageNum={pagge}/> </div>} 
+        
+         <button onClick={pageChange} >ChangePage </button>
         </>
     )
 }
