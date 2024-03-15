@@ -1,21 +1,48 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import NameInfo from "./NameInfoForm.jsx";
-import FnameContext from './NameInfoForm.jsx'
+import EducationInfoForm from "./EducationInfoForm.jsx";
+import WorkInfoForm from "./WorkInfoForm.jsx";
+
+
 
 
 function CVBuild() {
-    const [pagge, setPagge] = useState(1)
+    // Variable for switching pages
+    const [pageChng, setPageChng] = useState(1)
+    // const [addEduSection, setAddEduSection] = useState([<EducationInfoForm key={0} pageNum={pageChng}/>])
 
-
+//Logic for switching pages
     const pageChange = () => {
-        setPagge(!pagge)
+        setPageChng(!pageChng)
     }
 
+// let handleAddEduSection = (e) => {
+//     e.preventDefault();
+//     setAddEduSection([...addEduSection, <EducationInfoForm key={addEduSection.length} pageNum={pageChng}/>])
+// }
+
+
     return (
-        <> {pagge ? <div style={{backgroundColor:"yellow", width:"1200px", height:"800px"}}> <NameInfo pageNum={pagge}/> </div> :
-         <div style={{backgroundColor:"blue", width:"800px", height:"800px"}}> <NameInfo pageNum={pagge}/> </div>} 
-        
-         <button onClick={pageChange} >ChangePage </button>
+        <> {pageChng ?
+            <div style={{ backgroundColor: "yellow", width: "1200px", height: "800px" }}>
+                {/* <button onClick={handleAddEduSection}>Add</button> */}
+                <NameInfo pageNum={pageChng} />
+                <br></br>
+                <EducationInfoForm pageNum={pageChng}/>
+                <br></br>
+                <WorkInfoForm pageNum={pageChng}/>
+                {/* <hr/>
+                {addEduSection} */}
+            </div> :
+            <div style={{ backgroundColor: "blue", width: "800px", height: "800px" }}>
+                <NameInfo pageNum={pageChng} />
+                <br></br>
+                <EducationInfoForm pageNum={pageChng}/>
+                <br></br>
+                <WorkInfoForm pageNum={pageChng}/>
+            </div>}
+
+            <button onClick={pageChange} >ChangePage </button>
         </>
     )
 }
