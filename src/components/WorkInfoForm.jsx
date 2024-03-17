@@ -2,26 +2,42 @@ import { useState } from "react";
 import WorkInfoFormSummary from "./WorkInfoFormSummary";
 
 function WorkInfoForm(props) {
-    const [WorkNfo, setWorkNfo] = useState({company:"", location:"", role:"", from:"", to:"", additionalInfo:""})
+    const [WorkNfo, setWorkNfo] = useState([{company:"", location:"", role:"", from:"", to:"", additionalInfo:""}])
+
+    const handleAdd = () => {
+        setWorkNfo([...WorkNfo, { uniName: "", location: "", degree: "", from: "", to: "", additionalInfo: "" }])
+    }
+
+    const handleChange = (e, i) => {
+        const {name, value} = e.target;
+        const currArr = [...WorkNfo];
+        currArr[i][name] = value;
+        setWorkNfo(currArr); 
+    }
+
+    const handleDelete = (i) => {
+         const deleteItem = [...WorkNfo];
+         deleteItem.splice(i, 1);
+         setWorkNfo(deleteItem);
+    }
 
     return <>
-        { props.pageNum ?
-            <div>
-                <input placeholder='Company name' value={WorkNfo.uniName} onChange={(e) => { setWorkNfo({...WorkNfo, company:e.target.value}) }}></input>
+    
+        {WorkNfo.map((ele, i) => props.pageNum ? <div>
+            <button onClick={handleAdd}>Add</button>
+                <input placeholder='Company name' name="company" value={ele.company} onChange={(e) => handleChange(e,i)}></input>
                 <br></br>
-                <input placeholder="Location" value={WorkNfo.location} onChange={(e) => { setWorkNfo({...WorkNfo, location:e.target.value}) }}  ></input>
+                <input placeholder="Location" name="location" value={ele.location} onChange={(e) => handleChange(e,i)}  ></input>
                 <br></br>
-                <input placeholder="Role" value={WorkNfo.role} onChange={(e) => { setWorkNfo({...WorkNfo, role:e.target.value}) }} ></input>
+                <input placeholder="Role" name="role" value={ele.role} onChange={(e) => handleChange(e,i)} ></input>
                 <br></br>
-                <input placeholder="From" type="date"  value={WorkNfo.from} onChange={(e) => { setWorkNfo({...WorkNfo, from:e.target.value}) }} ></input>
-                <input placeholder="To" type="date"  value={WorkNfo.to} onChange={(e) => { setWorkNfo({...WorkNfo, to:e.target.value}) }} ></input>
+                <input placeholder="From" type="date" name="from" value={ele.from} onChange={(e) => handleChange(e,i)} ></input>
+                <input placeholder="To" type="date" name="to" value={ele.to} onChange={(e) => handleChange(e,i)} ></input>
                 <br></br>
-                <textarea placeholder="Additional information"  value={WorkNfo.additionalInfo} onChange={(e) => { setWorkNfo({...WorkNfo, additionalInfo:e.target.value}) }} ></textarea>
+                <textarea placeholder="Additional information" name="additionalInfo" value={ele.additionalInfo} onChange={(e) => handleChange(e,i)} ></textarea> <button onClick={() => handleDelete(i)}>Delete</button>
                  </div>
                 :
-                <WorkInfoFormSummary workInfo = {WorkNfo} />
-           
-        }
+                <WorkInfoFormSummary workInfo = {ele} /> )}
     </>
 }
 

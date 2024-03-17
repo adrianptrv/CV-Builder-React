@@ -2,26 +2,41 @@ import { useState } from "react";
 import EducationInfoFormSummary from "./EducationInfoFormSummary";
 
 function EducationInfoForm(props) {
-    const [EduNfo, setEduNfo] = useState({uniName:"", location:"", degree:"", from:"", to:"", additionalInfo:""})
+    const [EduNfo, setEduNfo] = useState([{ uniName: "", location: "", degree: "", from: "", to: "", additionalInfo: "" }])
+
+    const handleAdd = () => {
+        setEduNfo([...EduNfo, { uniName: "", location: "", degree: "", from: "", to: "", additionalInfo: "" }])
+    }
+
+    const handleChange = (e, i) => {
+        const {name, value} = e.target;
+        const currArr = [...EduNfo];
+        currArr[i][name] = value;
+        setEduNfo(currArr); 
+    }
+
+    const handleDelete = (i) => {
+         const deleteItem = [...EduNfo];
+         deleteItem.splice(i, 1);
+         setEduNfo(deleteItem);
+    }
 
     return <>
-        { props.pageNum ?
-            <div>
-                <input placeholder='University/School name' value={EduNfo.uniName} onChange={(e) => { setEduNfo({...EduNfo, uniName:e.target.value}) }}></input>
-                <br></br>
-                <input placeholder="Location" value={EduNfo.location} onChange={(e) => { setEduNfo({...EduNfo, location:e.target.value}) }}  ></input>
-                <br></br>
-                <input placeholder="Degree" value={EduNfo.degree} onChange={(e) => { setEduNfo({...EduNfo, degree:e.target.value}) }} ></input>
-                <br></br>
-                <input placeholder="From" type="date"  value={EduNfo.from} onChange={(e) => { setEduNfo({...EduNfo, from:e.target.value}) }} ></input>
-                <input placeholder="To" type="date"  value={EduNfo.to} onChange={(e) => { setEduNfo({...EduNfo, to:e.target.value}) }} ></input>
-                <br></br>
-                <textarea placeholder="Additional information"  value={EduNfo.additionalInfo} onChange={(e) => { setEduNfo({...EduNfo, additionalInfo:e.target.value}) }} ></textarea>
-                 </div>
-                :
-                <EducationInfoFormSummary eduInfo = {EduNfo} />
-           
-        }
+        
+        {EduNfo.map((ele, i) => props.pageNum ? <div>
+            <button onClick={handleAdd}>Add</button>
+            <input placeholder='University/School name' name="uniName" value={ele.uniName} onChange={(e) => handleChange(e,i)}></input>
+            <br></br>
+            <input placeholder="Location" name="location" value={ele.location} onChange={(e) => handleChange(e,i)}  ></input>
+            <br></br>
+            <input placeholder="Degree" name="degree" value={ele.degree} onChange={(e) => handleChange(e,i)} ></input>
+            <br></br>
+            <input placeholder="From" name="from" type="date" value={ele.from} onChange={(e) => handleChange(e,i)} ></input>
+            <input placeholder="To" name="to" type="date" value={ele.to} onChange={(e) => handleChange(e,i)} ></input>
+            <br></br>
+            <textarea placeholder="Additional information" name="additionalInfo" value={ele.additionalInfo} onChange={(e) => handleChange(e,i)} ></textarea>
+            <button onClick={() => handleDelete(i)}>Delete</button>
+        </div> : <EducationInfoFormSummary eduInfo = {ele}/> )}
     </>
 }
 
