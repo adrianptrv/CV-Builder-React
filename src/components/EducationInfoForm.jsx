@@ -1,5 +1,10 @@
 import { useState } from "react";
 import EducationInfoFormSummary from "./EducationInfoFormSummary";
+import "../styles/EducationInfoForm.scss"
+
+//Icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 function EducationInfoForm(props) {
     const [EduNfo, setEduNfo] = useState([{ uniName: "", location: "", degree: "", from: "", to: "", additionalInfo: "" }])
@@ -24,7 +29,7 @@ function EducationInfoForm(props) {
     return <>
         
         {EduNfo.map((ele, i) => props.pageNum ? <div>
-            <button onClick={handleAdd}>Add</button>
+            <button onClick={handleAdd}><FontAwesomeIcon icon={faPlus} />Add</button>
             <input placeholder='University/School name' name="uniName" value={ele.uniName} onChange={(e) => handleChange(e,i)}></input>
             <br></br>
             <input placeholder="Location" name="location" value={ele.location} onChange={(e) => handleChange(e,i)}  ></input>
@@ -35,7 +40,7 @@ function EducationInfoForm(props) {
             <input placeholder="To" name="to" type="date" value={ele.to} onChange={(e) => handleChange(e,i)} ></input>
             <br></br>
             <textarea placeholder="Additional information" name="additionalInfo" value={ele.additionalInfo} onChange={(e) => handleChange(e,i)} ></textarea>
-            <button onClick={() => handleDelete(i)}>Delete</button>
+            <button onClick={() => handleDelete(i)}><FontAwesomeIcon icon={faTrash} />Delete</button>
         </div> : <EducationInfoFormSummary eduInfo = {ele}/> )}
     </>
 }

@@ -1,0 +1,51 @@
+.imgWrapper {
+    margin: auto;
+    width: 150px;
+    padding-top: 25px;
+
+    img {
+        object-fit: contain;
+
+    }
+
+
+    input {
+        margin: 5px 0 0 20px;  
+        // Remove the text from the input image 
+        color: transparent;
+    }
+
+    // Add CSS to the input image button only
+    input[type=file]::file-selector-button {
+        padding: 5px 10px;
+        background-color: white;
+        border: 2px solid #00224D;
+        border-radius: 10px;
+        font-family: "Madimi One", sans-serif;
+        font-size: 18px;
+        width: 115px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.PersonalInputInfo {
+    text-align: center;
+    width: 92%;
+    margin: auto;
+ 
+
+    input {
+        padding: 10px;
+        background-color: white;
+        border: 1px solid #00224D;
+        border-radius: 5px;
+        font-family: "Madimi One", sans-serif;
+        font-size: 16px;
+        font-weight: 100;
+        margin: 3px;
+        width: 42%;
+    }
+}

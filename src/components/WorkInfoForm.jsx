@@ -1,5 +1,10 @@
 import { useState } from "react";
 import WorkInfoFormSummary from "./WorkInfoFormSummary";
+import "../styles/WorkInfoForm.scss"
+
+//Icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 function WorkInfoForm(props) {
     const [WorkNfo, setWorkNfo] = useState([{company:"", location:"", role:"", from:"", to:"", additionalInfo:""}])
@@ -24,7 +29,7 @@ function WorkInfoForm(props) {
     return <>
     
         {WorkNfo.map((ele, i) => props.pageNum ? <div>
-            <button onClick={handleAdd}>Add</button>
+            <button onClick={handleAdd}><FontAwesomeIcon icon={faPlus} />Add</button>
                 <input placeholder='Company name' name="company" value={ele.company} onChange={(e) => handleChange(e,i)}></input>
                 <br></br>
                 <input placeholder="Location" name="location" value={ele.location} onChange={(e) => handleChange(e,i)}  ></input>
@@ -34,7 +39,7 @@ function WorkInfoForm(props) {
                 <input placeholder="From" type="date" name="from" value={ele.from} onChange={(e) => handleChange(e,i)} ></input>
                 <input placeholder="To" type="date" name="to" value={ele.to} onChange={(e) => handleChange(e,i)} ></input>
                 <br></br>
-                <textarea placeholder="Additional information" name="additionalInfo" value={ele.additionalInfo} onChange={(e) => handleChange(e,i)} ></textarea> <button onClick={() => handleDelete(i)}>Delete</button>
+                <textarea placeholder="Additional information" name="additionalInfo" value={ele.additionalInfo} onChange={(e) => handleChange(e,i)} ></textarea> <button onClick={() => handleDelete(i)}><FontAwesomeIcon icon={faTrash} />Delete</button>
                  </div>
                 :
                 <WorkInfoFormSummary workInfo = {ele} /> )}
