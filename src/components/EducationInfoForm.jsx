@@ -14,34 +14,44 @@ function EducationInfoForm(props) {
     }
 
     const handleChange = (e, i) => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
         const currArr = [...EduNfo];
         currArr[i][name] = value;
-        setEduNfo(currArr); 
+        setEduNfo(currArr);
     }
 
     const handleDelete = (i) => {
-         const deleteItem = [...EduNfo];
-         deleteItem.splice(i, 1);
-         setEduNfo(deleteItem);
+        if (EduNfo.length == 1) {
+            alert("You need to have atleast 1 education input");
+        }
+        else {
+            const deleteItem = [...EduNfo];
+            deleteItem.splice(i, 1);
+            setEduNfo(deleteItem);
+        }
     }
 
     return <>
-        
-        {EduNfo.map((ele, i) => props.pageNum ? <div>
-            <button onClick={handleAdd}><FontAwesomeIcon icon={faPlus} />Add</button>
-            <input placeholder='University/School name' name="uniName" value={ele.uniName} onChange={(e) => handleChange(e,i)}></input>
+
+        {EduNfo.map((ele, i) => props.pageNum ? <div className="eduInputInfo">
+            <hr></hr>
+            <div className="eduFirstLineWrapper">
+                <button onClick={handleAdd}><FontAwesomeIcon icon={faPlus} /></button>
+                <input placeholder='University/School name' name="uniName" value={ele.uniName} onChange={(e) => handleChange(e, i)}></input>
+                <button onClick={() => handleDelete(i)}><FontAwesomeIcon icon={faTrash} /></button>
+            </div>
             <br></br>
-            <input placeholder="Location" name="location" value={ele.location} onChange={(e) => handleChange(e,i)}  ></input>
+            <input placeholder="Location" name="location" value={ele.location} onChange={(e) => handleChange(e, i)}  ></input>
+            <input placeholder="Degree" name="degree" value={ele.degree} onChange={(e) => handleChange(e, i)} ></input>
             <br></br>
-            <input placeholder="Degree" name="degree" value={ele.degree} onChange={(e) => handleChange(e,i)} ></input>
+            <div className="fromTo">  <p>From:</p> <p>To:</p></div>
             <br></br>
-            <input placeholder="From" name="from" type="date" value={ele.from} onChange={(e) => handleChange(e,i)} ></input>
-            <input placeholder="To" name="to" type="date" value={ele.to} onChange={(e) => handleChange(e,i)} ></input>
+            <input placeholder="dd-mm-yyyy" name="from" type="date" value={ele.from} onChange={(e) => handleChange(e, i)} ></input>
+            <input placeholder="To" name="to" type="date" value={ele.to} onChange={(e) => handleChange(e, i)} ></input>
             <br></br>
-            <textarea placeholder="Additional information" name="additionalInfo" value={ele.additionalInfo} onChange={(e) => handleChange(e,i)} ></textarea>
-            <button onClick={() => handleDelete(i)}><FontAwesomeIcon icon={faTrash} />Delete</button>
-        </div> : <EducationInfoFormSummary eduInfo = {ele}/> )}
+            <textarea placeholder="Additional information" name="additionalInfo" value={ele.additionalInfo} onChange={(e) => handleChange(e, i)} ></textarea>
+
+        </div> : <EducationInfoFormSummary eduInfo={ele} />)}
     </>
 }
 

@@ -11,9 +11,7 @@ body {
     background-color: #34373b;
 }
 
-.formWrapper {
-    margin: auto;
-}
+
 
 .navBar {
     background-color: #00224D;
@@ -57,7 +55,10 @@ body {
 .formWrapper {
     background-color: #adaeaf;
     width: 40%;
+    margin: auto;
     margin-top: 50px;
+    margin-bottom: 50px;
+    padding-bottom: 25px;
     @media only screen and (max-width: 1024px) {
      width: 90%;  
      margin-top: 20px;

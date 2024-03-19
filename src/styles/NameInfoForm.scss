@@ -10,9 +10,10 @@
 
 
     input {
-        margin: 5px 0 0 20px;  
+        margin: 5px 0 0 18px;  
         // Remove the text from the input image 
         color: transparent;
+        width: -webkit-fill-available;
     }
 
     // Add CSS to the input image button only
@@ -23,7 +24,7 @@
         border-radius: 10px;
         font-family: "Madimi One", sans-serif;
         font-size: 18px;
-        width: 115px;
+        width: auto;
 
         &:hover {
             cursor: pointer;
@@ -47,5 +48,8 @@
         font-weight: 100;
         margin: 3px;
         width: 42%;
+        @media only screen and (max-width: 425px) {
+            width: 35%;  
+        }
     }
 }
