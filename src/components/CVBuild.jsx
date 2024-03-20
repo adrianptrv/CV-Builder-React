@@ -42,7 +42,7 @@ function CVBuild() {
                     <EducationInfoForm pageNum={pageChng} />
                     <WorkInfoForm pageNum={pageChng} />
                 </div> :
-                <div style={{ backgroundColor: "blue", width: "800px", height: "800px" }}>
+                <div className="CVWrapper">
                     <NameInfo pageNum={pageChng} />
                     <br></br>
                     <EducationInfoForm pageNum={pageChng} />

@@ -44,6 +44,8 @@ function WorkInfoForm(props) {
             <input placeholder="Location" name="location" value={ele.location} onChange={(e) => handleChange(e, i)}  ></input>
             <input placeholder="Role" name="role" value={ele.role} onChange={(e) => handleChange(e, i)} ></input>
             <br></br>
+            <div className="fromTo">  <p>From:</p> <p>To:</p></div>
+            <br></br>
             <input placeholder="From" type="date" name="from" value={ele.from} onChange={(e) => handleChange(e, i)} ></input>
             <input placeholder="To" type="date" name="to" value={ele.to} onChange={(e) => handleChange(e, i)} ></input>
             <br></br>

@@ -16,6 +16,7 @@ body {
 .navBar {
     background-color: #00224D;
     height: 142px;
+    box-shadow: 0px 5px 15px 5px rgb(193 193 193 / 15%);
 
     h1 {
         color: white;
@@ -59,8 +60,23 @@ body {
     margin-top: 50px;
     margin-bottom: 50px;
     padding-bottom: 25px;
+    box-shadow: 0px 0px 20px 18px rgb(193 193 193 / 15%);
     @media only screen and (max-width: 1024px) {
      width: 90%;  
      margin-top: 20px;
     }
+}
+
+
+.CVWrapper{
+    background-color: white;
+    width: 40%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-bottom: 25px;
+    @media only screen and (max-width: 1024px) {
+        width: 90%;  
+        margin-top: 20px;
+       }
 }

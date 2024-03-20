@@ -1,0 +1,23 @@
+.CVHeader {
+    display: flex;
+    justify-content: space-between;
+    background-color: lightblue;
+
+    .CVimgWrapper {
+        margin-left: 3%;
+        margin-top: 3%;
+
+        img {
+            border-radius: 50%;
+            object-fit: fill;
+        }
+
+        h1 {
+            display: inline-block;
+            position: relative;
+            bottom: 115px;
+            left: 40px;
+            color: white;
+        }
+    }
+}
