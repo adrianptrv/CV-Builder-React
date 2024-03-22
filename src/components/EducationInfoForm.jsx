@@ -33,7 +33,7 @@ function EducationInfoForm(props) {
 
     return <>
 
-        {EduNfo.map((ele, i) => props.pageNum ? <div className="eduInputInfo">
+        {EduNfo.map((ele, i) => props.pageNum ? <div className="eduInputInfo" key={i}>
             <hr></hr>
             <div className="eduFirstLineWrapper">
                 <button onClick={handleAdd}><FontAwesomeIcon icon={faPlus} /></button>

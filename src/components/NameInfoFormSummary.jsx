@@ -1,6 +1,9 @@
 import { useState, createContext, useRef } from "react";
 import "../styles/NameInfoFormSummary.scss"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPhone, faEnvelope, faAddressBook } from '@fortawesome/free-solid-svg-icons'
+
 function NameInfoSummary({ personInfo, pic }) {
     return <>
         <div className="CVHeader">
@@ -9,9 +12,9 @@ function NameInfoSummary({ personInfo, pic }) {
                 <h1>{personInfo.flname}</h1>
             </div>
             <div className="CVinfoWrapper">
-                <p>{personInfo.phone}</p>
-                <p>{personInfo.email}</p>
-                <p>{personInfo.address}</p>
+                <p><FontAwesomeIcon icon={faPhone} />{personInfo.phone}</p>
+                <p><FontAwesomeIcon icon={faEnvelope} />{personInfo.email}</p>
+                <p><FontAwesomeIcon icon={faAddressBook} />{personInfo.address}</p>
             </div>
         </div>
     </>
