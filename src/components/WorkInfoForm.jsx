@@ -33,7 +33,7 @@ function WorkInfoForm(props) {
 
     return <>
 
-        {WorkNfo.map((ele, i) => props.pageNum ? <div className="workInputInfo">
+        {WorkNfo.map((ele, i) => props.pageNum ? <div className="workInputInfo" key={i}>
             <hr></hr>
             <div className="workFirstLineWrapper">
                 <button onClick={handleAdd}><FontAwesomeIcon icon={faPlus} /></button>
@@ -52,7 +52,7 @@ function WorkInfoForm(props) {
             <textarea placeholder="Additional information" name="additionalInfo" value={ele.additionalInfo} onChange={(e) => handleChange(e, i)} ></textarea>
         </div>
             :
-            <WorkInfoFormSummary workInfo={ele} />)}
+            <WorkInfoFormSummary workInfo={ele} key={i} number={i} />)}
     </>
 }
 

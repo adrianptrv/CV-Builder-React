@@ -80,3 +80,11 @@ body {
         margin-top: 20px;
        }
 }
+
+@media print {
+    .CVWrapper {
+        width: 100%;
+        margin-top: 0px;
+    }
+
+}

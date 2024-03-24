@@ -4,6 +4,11 @@
     margin: auto;
     margin-bottom: 20px;
 
+    input[type="date"]:hover {
+        cursor: pointer;
+    }
+
+
     hr{
         height: 2px;
         background-color: black;

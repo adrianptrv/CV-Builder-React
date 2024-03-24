@@ -51,7 +51,7 @@ function EducationInfoForm(props) {
             <br></br>
             <textarea placeholder="Additional information" name="additionalInfo" value={ele.additionalInfo} onChange={(e) => handleChange(e, i)} ></textarea>
 
-        </div> : <EducationInfoFormSummary eduInfo={ele} />)}
+        </div> : <EducationInfoFormSummary eduInfo={ele} key={i} number={i}/>)}
     </>
 }
 
