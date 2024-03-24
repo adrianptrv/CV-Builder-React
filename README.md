@@ -25,12 +25,16 @@ This was my first "real" React project, also the first project on which I am usi
 
 ### Screenshots
 
+<table>
+  <tr>
+    <td colspan="2" align="center" ><b>Mobile layout</b> </td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/adrianptrv/CV-Builder-React/assets/99720888/19e8c3b3-d2ca-4dd3-ad77-803d66349670"  /></td>
+    <td><img src="https://github.com/adrianptrv/CV-Builder-React/assets/99720888/f3c332d1-d44b-4f8b-b6eb-9f400b5505ec" /> </td>
+  </tr>
+</table>                                                                                                                                                    
 
-| Mobile layout                                                                                                                   |                                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| <img src="https://github.com/adrianptrv/CV-Builder-React/assets/99720888/19e8c3b3-d2ca-4dd3-ad77-803d66349670"  />              |           <img src="https://github.com/adrianptrv/CV-Builder-React/assets/99720888/f3c332d1-d44b-4f8b-b6eb-9f400b5505ec" />     
-                      
-                                                                                                                                            
 
 | Desktop layout                                                                                                                                                                       
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
