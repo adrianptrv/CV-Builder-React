@@ -26,10 +26,14 @@ This was my first "real" React project, also the first project on which I am usi
 ### Screenshots
 
 
-| Mobile layout                                                                                                                   | Desktop layout                                                                                                                 |
+| Mobile layout                                                                                                                   |                                                                                                                                |
 | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| <img src="https://github.com/adrianptrv/CV-Builder-React/assets/99720888/19e8c3b3-d2ca-4dd3-ad77-803d66349670"  />              | <img src="https://github.com/adrianptrv/CV-Builder-React/assets/99720888/0caa20a2-4813-4b57-a835-8119d38d1626" />              |
-| <img src="https://github.com/adrianptrv/CV-Builder-React/assets/99720888/f3c332d1-d44b-4f8b-b6eb-9f400b5505ec" />               | <img src="https://github.com/adrianptrv/CV-Builder-React/assets/99720888/a184babd-6c44-497f-ad81-f99da7d8e3ac" />              |
-| <img src="https://github.com/adrianptrv/CV-Builder-React/assets/99720888/b68bf7cc-6e85-466b-9cdd-ca460d4d33ad" />                                                                                                                                                |
+| <img src="https://github.com/adrianptrv/CV-Builder-React/assets/99720888/19e8c3b3-d2ca-4dd3-ad77-803d66349670"  />              |           <img src="https://github.com/adrianptrv/CV-Builder-React/assets/99720888/f3c332d1-d44b-4f8b-b6eb-9f400b5505ec" />     
+                      
+                                                                                                                                            
 
-
+| Desktop layout                                                                                                                                                                       
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <img src="https://github.com/adrianptrv/CV-Builder-React/assets/99720888/0caa20a2-4813-4b57-a835-8119d38d1626" />
+| <img src="https://github.com/adrianptrv/CV-Builder-React/assets/99720888/a184babd-6c44-497f-ad81-f99da7d8e3ac" />   
+| <img src="https://github.com/adrianptrv/CV-Builder-React/assets/99720888/b68bf7cc-6e85-466b-9cdd-ca460d4d33ad" />     
